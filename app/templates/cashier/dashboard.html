@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Sales Dashboard</h1>
+    <nav>
+        <a href="{{ url_for('routes.cashier_dashboard') }}">POS</a>
+        <a href="{{ url_for('routes.logout') }}">Logout</a>
+    </nav>
+</header>
+<main class="pos-main">
+    <div id="product-grid" class="product-grid">
+        <!-- Products will be loaded here via JS -->
+    </div>
+    <div id="cart" class="cart">
+        <h2>Cart</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+            <p>Total: K<span id="cart-total">0.00</span></p>
+        </div>
+        <button id="process-sale-btn">Process Sale</button>
+        <div id="receipt-link-container" class="receipt-link-container"></div>
+    </div>
+</main>
+{% endblock %}

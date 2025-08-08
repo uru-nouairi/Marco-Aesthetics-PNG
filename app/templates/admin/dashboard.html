@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <a href="{{ url_for('routes.admin_dashboard') }}">Dashboard</a>
+        <a href="#inventory">Manage Inventory</a>
+        <a href="#reports">View Reports</a>
+        <a href="{{ url_for('routes.logout') }}">Logout</a>
+    </nav>
+</header>
+<main>
+    <section id="inventory">
+        <h2>Inventory Management</h2>
+        <!-- Inventory management UI will go here -->
+        <div id="product-list"></div>
+        <h3>Add/Edit Product</h3>
+        <form id="product-form">
+            <input type="hidden" id="product-id">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-price">Price</label>
+                <input type="number" id="product-price" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="product-stock">Stock</label>
+                <input type="number" id="product-stock" required>
+            </div>
+            <button type="submit">Save Product</button>
+        </form>
+    </section>
+    <section id="reports">
+        <h2>Sales Reports</h2>
+        <!-- Reports UI will go here -->
+    </section>
+</main>
+{% endblock %}
